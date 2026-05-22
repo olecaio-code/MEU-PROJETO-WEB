@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Google Sheets API</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 { 
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .diagnostic {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .diagnostic h3 {
+            color: #495057;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .check-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-left: 4px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+        .check-item.ok {
+            border-left-color: #28a745;
+            background: #f0f8f4;
+        }
+        .check-item.error {
+            border-left-color: #dc3545;
+            background: #f8f4f4;
+        }
+        .check-item.warning {
+            border-left-color: #ffc107;
+            background: #fffbf0;
+        }
+        .solutions {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .solutions h3 {
+            color: #1976D2;
+            margin-bottom: 15px;
+        }
+        .solution {
+            margin: 12px 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .solution strong {
+            color: #1976D2;
+        }
+        .code {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 8px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #d63384;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 100%;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.fail {
+            background: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Diagnóstico de Integração</h1>
+        <div class="subtitle">Analisando a configuração da Google Sheets API</div>
+
+        <div class="diagnostic">
+            <h3>📋 Informações Atuais</h3>
+            <div class="check-item">
+                <strong>ID da Planilha:</strong>
+                <br>1TWukqSR6JrBoW23xX1xDKiNph4R1NlK4OOLAzmL1VAA
+            </div>
+            <div class="check-item">
+                <strong>Chave API:</strong>
+                <br>AIzaSyBG3wqjDh5BqucfBzQmkiX2zGMKb2rRDLQ
+                <span class="status fail">403 FORBIDDEN</span>
+            </div>
+        </div>
+
+        <div class="diagnostic">
+            <h3>⚠️ Problema Identificado</h3>
+            <div class="check-item error">
+                <strong>HTTP 403: Forbidden</strong>
+                <br>A chave API não tem permissão para acessar esta planilha.
+            </div>
+        </div>
+
+        <div class="solutions">
+            <h3>🔧 Soluções (em ordem de dificuldade)</h3>
+            
+            <div class="solution">
+                <strong>1️⃣ Verifique o compartilhamento da planilha (FÁCIL)</strong>
+                <br>Sua planilha deve estar com acesso público:
+                <div class="code">
+                    ✓ Compartilhar → "Qualquer pessoa com o link"<br>
+                    ou<br>
+                    ✓ Compartilhar → "Público"
+                </div>
+            </div>
+
+            <div class="solution">
+                <strong>2️⃣ Gere uma nova Chave API (MÉDIO)</strong>
+                <br>A chave atual pode estar desativada:
+                <ol style="margin-left: 20px;">
+                    <li>Acesse: <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a></li>
+                    <li>Vá para: <strong>APIs & Services</strong> → <strong>Credentials</strong></li>
+                    <li>Clique em: <strong>+ Create Credentials</strong> → <strong>API Key</strong></li>
+                    <li>Copie a nova chave e substitua em <strong>js/config.js</strong></li>
+                </ol>
+            </div>
+
+            <div class="solution">
+                <strong>3️⃣ Use um método alternativo (AVANÇADO)</strong>
+                <br>Se a chave continuar com problemas, podemos usar:
+                <ul style="margin-left: 20px;">
+                    <li>Web Scraping (sem API key)</li>
+                    <li>Exportar CSV e servir localmente</li>
+                    <li>Usar Google Apps Script</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 4px; margin: 20px 0;">
+            <strong style="color: #856404;">💡 Recomendação:</strong>
+            <br>Comece pela solução 1️⃣ (verificar compartilhamento) - é a mais rápida!
+            <br>Se não funcionar, passe para 2️⃣ (nova chave API).
+        </div>
+
+        <button onclick="window.location.href='test-api.html'">↩️ Voltar aos Testes</button>
+    </div>
+</body>
+</html>

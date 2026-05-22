@@ -1,0 +1,172 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║               ✅ CHECKLIST FINAL - GERAR NOVA CHAVE API               ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+
+🔄 ETAPA 1: GERAR CHAVE NO GOOGLE CLOUD (5 min)
+────────────────────────────────────────────────────────────────────────
+
+☐ Abri: https://console.cloud.google.com/
+
+☐ Fiz login com minha conta Google
+
+☐ Criei novo projeto:
+   Clique: Seletor de Projeto (canto superior)
+   Clique: "Novo Projeto"
+   Nome: "Dashboard Comercial"
+   Clique: "Criar"
+
+☐ Habilitei Google Sheets API:
+   Menu: APIs & Services → Library
+   Procure: "Google Sheets API"
+   Clique: "Enable" (azul)
+   Aguardei confirmação
+
+☐ Criei chave API:
+   Menu: APIs & Services → Credentials
+   Clique: "+ CREATE CREDENTIALS" (azul)
+   Escolha: "API Key"
+   Aguardei a chave aparecer
+
+☐ Copiei a chave:
+   Clique: "Copy"
+   (Agora está no meu clipboard)
+
+
+🔧 ETAPA 2: ATUALIZAR O CÓDIGO (2 min)
+────────────────────────────────────────────────────────────────────────
+
+☐ Abri arquivo: meu-projeto-web/js/config.js
+
+☐ Removi a chave antiga:
+   Selecionei: AIzaSyBG3wqjDh5BqucfBzQmkiX2zGMKb2rRDLQ
+   Pressionei: Delete
+
+☐ Colei a chave nova:
+   Posição do cursor: entre as aspas da API_KEY
+   Pressionei: Ctrl+V (ou Cmd+V)
+   A nova chave apareceu
+
+☐ Verifiquei se ficou correto:
+   Linha 2: const API_KEY = "AIzaSy...MINHA_NOVA_CHAVE...";
+   Aspas OK?   ✓
+   Ponto-vírgula OK?   ✓
+
+☐ Salvei o arquivo:
+   Pressionei: Ctrl+S
+   Vi a confirmação no editor
+
+
+🧪 ETAPA 3: TESTAR (1 min)
+────────────────────────────────────────────────────────────────────────
+
+☐ Abri no navegador: meu-projeto-web/test-api.html
+
+☐ Aguardei os testes rodarem
+
+☐ Verifiquei os resultados:
+   Esperado: ✅ ✅ ✅ (em verde para as abas)
+   Obtido:   ???
+
+
+   SE TODOS ✅ (verde):
+   ────────────────────────────────────────────────────
+   ☐ SUCESSO! Vá para ETAPA 4
+
+   SE ALGUNS ❌ (vermelho):
+   ────────────────────────────────────────────────────
+   ☐ TAMBÉM PRECISO COMPARTILHAR A PLANILHA
+   ☐ Vá para: COMPARTILHAR_PLANILHA.txt
+
+
+🎉 ETAPA 4: USAR O DASHBOARD (1 min)
+────────────────────────────────────────────────────────────────────────
+
+☐ Abri no navegador: meu-projeto-web/index.html
+
+☐ Aguardei o carregamento (vejo o spinner girando)
+
+☐ Vi as abas aparecendo no topo
+
+☐ Vi os dados nas tabelas
+
+☐ Cliquei em diferentes abas para navegar
+
+☐ Cliquei em "Atualizar Dados" para recarregar
+
+
+═════════════════════════════════════════════════════════════════════════
+
+
+📊 RESULTADO ESPERADO:
+────────────────────────────────────────────────────────────────────────
+
+✅ Se todos os testes em test-api.html forem verdes:
+   → A chave está válida
+   → A API consegue acessar a planilha
+   → index.html funcionará perfeitamente
+
+❌ Se alguns testes forem vermelhos:
+   → A chave funciona, mas a planilha não está compartilhada
+   → Leia: COMPARTILHAR_PLANILHA.txt (próximo passo)
+
+
+⏱️ TEMPO TOTAL:
+────────────────────────────────────────────────────────────────────────
+
+Gerar chave:     5 minutos ⚡
+Atualizar código: 2 minutos ⚡
+Testar:          1 minuto  ⚡
+────────────────────────────
+TOTAL:           8 minutos ⚡
+
+
+═════════════════════════════════════════════════════════════════════════
+
+🆘 PROBLEMAS COMUNS:
+────────────────────────────────────────────────────────────────────────
+
+❌ "Erro ao salvar config.js"
+   → Certifique-se que o arquivo não está aberto em outro editor
+   → Feche o outro editor e tente novamente
+
+❌ "Chave parece inválida"
+   → Copie novamente da Google Cloud Console
+   → Certifique-se de não deixar espaços
+   → Verifique as aspas
+
+❌ "Testes ainda dão 403"
+   → A chave está ok, mas a planilha precisa ser compartilhada
+   → Leia: COMPARTILHAR_PLANILHA.txt
+
+❌ "Arquivo aberto em editor online"
+   → Você está vendo o arquivo no VS Code?
+   → Salve com Ctrl+S
+   → Aguarde a nuvem aparecer para confirmar
+
+
+═════════════════════════════════════════════════════════════════════════
+
+📚 REFERÊNCIA RÁPIDA:
+────────────────────────────────────────────────────────────────────────
+
+Arquivo a editar:
+  👉 meu-projeto-web/js/config.js
+
+Linha a mudar:
+  👉 const API_KEY = "...nova chave aqui...";
+
+Testes:
+  👉 meu-projeto-web/test-api.html
+
+Dashboard:
+  👉 meu-projeto-web/index.html
+
+Documentação completa:
+  👉 GERAR_NOVA_CHAVE_API.md
+
+═════════════════════════════════════════════════════════════════════════
+
+PRÓXIMO PASSO: Execute o CHECKLIST acima ☝️
+
+═════════════════════════════════════════════════════════════════════════

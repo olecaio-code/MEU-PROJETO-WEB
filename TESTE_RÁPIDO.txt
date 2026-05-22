@@ -1,0 +1,76 @@
+## 🎯 GUIA RÁPIDO DE TESTE
+
+### Passo 1️⃣: Abra o teste de integração
+```
+Abra no navegador: meu-projeto-web/test-api.html
+```
+
+Você verá:
+- Uma página com título "🔍 Teste de Integração - Google Sheets"
+- Um botão "▶ Executar Testes"
+- Uma lista de abas sendo testadas
+
+### Passo 2️⃣: Analise os resultados
+
+**Se ver ✅ (verde):**
+```
+✅ Agencias-SP
+  28 linhas (27 com dados)
+```
+→ A aba está funcionando!
+
+**Se ver ❌ (vermelho):**
+```
+❌ Agencias-DF
+  Error: Invalid range
+```
+→ Verifique se o nome da aba está correto na Google Sheets
+
+### Passo 3️⃣: Teste o dashboard
+
+Se todos os testes passarem:
+
+1. Abra: `meu-projeto-web/index.html`
+2. Verá um carregador girando por alguns segundos
+3. Depois as abas e dados aparecerão
+4. Clique nas abas para navegar
+
+### Passo 4️⃣: Debug se necessário
+
+Abra DevTools com **F12**:
+
+1. Vá para aba **Console**
+2. Procure por:
+   - Mensagens de sucesso: `✓ Loaded X rows...`
+   - Mensagens de erro: `✗ Erro carregando...`
+   - Nome exato da aba que falhou
+
+3. Atualize a configuração se necessário:
+   - Arquivo: `js/tabs.js`
+   - Propriedade: `sheetName` deve corresponder exatamente ao nome da aba
+
+---
+
+## ⚡ Checklist Rápido
+
+```
+☐ Abri test-api.html
+☐ Vi os resultados dos testes
+☐ Anotei quais abas falharam (se houver)
+☐ Verifiquei os nomes das abas na Google Sheets
+☐ Abri index.html
+☐ Os dados aparecem nas tabelas
+☐ Consigo clicar nas abas e navegar
+```
+
+---
+
+## 💡 Dicas
+
+- **Não carrega nada?** Verifique a internet e a API key
+- **Erros específicos?** Veja o console (F12) para mensagens detalhadas
+- **Quer mais detalhes?** Leia: `INTEGRAÇÃO_GOOGLE_SHEETS.md`
+
+---
+
+✨ **Pronto!** Se tudo passou, sua integração está funcionando!

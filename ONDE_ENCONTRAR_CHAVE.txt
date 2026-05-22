@@ -1,0 +1,158 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║          🔍 ONDE ENCONTRAR A CHAVE NO GOOGLE CLOUD CONSOLE            ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+
+📍 LOCALIZAÇÃO DA CHAVE:
+────────────────────────────────────────────────────────────────────────
+
+Google Cloud Console
+    ↓
+APIs & Services
+    ↓
+Credentials
+    ↓
+API Keys (seção)
+    ↓
+Sua chave aqui: AIzaSy...
+
+
+📋 PASSO-A-PASSO COM SCREENSHOTS (em texto):
+════════════════════════════════════════════════════════════════════════
+
+
+TELA 1: Abrir Google Cloud
+────────────────────────────
+
+Abra em seu navegador:
+https://console.cloud.google.com/
+
+Você verá:
+┌─────────────────────────────────────┐
+│  Google Cloud         [seletor ▼]   │ ← Seu projeto
+├─────────────────────────────────────┤
+│ Menu                 Dashboard       │
+│ • Home                               │
+│ • APIs & Services          (CLIQUE) │ ← AQUI
+│ • Storage                           │
+│ • Databases                         │
+└─────────────────────────────────────┘
+
+
+TELA 2: Menu APIs & Services
+──────────────────────────────
+
+Menu abriu, procure por:
+┌────────────────────────────────┐
+│ APIs & Services                │
+├────────────────────────────────┤
+│ → Overview                      │
+│ → Enabled APIs                 │
+│ → Library                      │
+│ → Credentials           (CLIQUE)│ ← AQUI
+│ → OAuth consent screen         │
+└────────────────────────────────┘
+
+
+TELA 3: Página de Credentials
+──────────────────────────────
+
+Você verá a página dividida em seções:
+┌─────────────────────────────────────────┐
+│ Credentials                             │
+├─────────────────────────────────────────┤
+│                                         │
+│ [+ CREATE CREDENTIALS ▼] (azul)         │
+│                                         │
+│ ┌─────────────────────────────────────┐ │
+│ │ API Keys                      (↓)   │ │
+│ ├─────────────────────────────────────┤ │
+│ │ • AIzaSyBG3wqjDh5BqucfBzQm...      │ │ ← Sua chave
+│ │   (Se houver, clique em Copy)      │ │
+│ │                                     │ │
+│ │ Se NÃO houver chave:                │ │
+│ │ Clique em + CREATE CREDENTIALS      │ │
+│ │ Escolha: API Key                    │ │
+│ │ Copie a chave gerada                │ │
+│ └─────────────────────────────────────┘ │
+│                                         │
+│ OAuth 2.0 Client IDs                    │
+│ (Esta é para o OAuth, não use)         │
+│                                         │
+│ Service Accounts                        │
+│ (Esta é para backend, não use)         │
+│                                         │
+└─────────────────────────────────────────┘
+
+
+TELA 4: Copiar a Chave
+──────────────────────
+
+Se a chave já existe:
+┌─────────────────────────────────────────┐
+│ API Key                                 │
+├─────────────────────────────────────────┤
+│ AIzaSyBG3wqjDh5BqucfBzQmkiX2...        │
+│                                         │
+│ [Copy icon] [Edit]  [Delete]           │ ← Copy aqui
+│                                         │
+└─────────────────────────────────────────┘
+
+Se NÃO existe chave:
+┌─────────────────────────────────────────┐
+│ + CREATE CREDENTIALS (botão azul)       │
+│                                         │
+│ Clique → escolha "API Key"             │
+│                                         │
+│ Aguarde a chave ser gerada             │
+│                                         │
+│ Clique em "Copy"                       │
+└─────────────────────────────────────────┘
+
+
+════════════════════════════════════════════════════════════════════════
+
+✅ CONFIRMAÇÃO:
+────────────────────────────────────────────────────────────────────────
+
+Você copiou uma chave que parece assim:
+
+AIzaSyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+
+Se sim, continuar com próximo passo!
+Se não, volte e procure melhor.
+
+
+════════════════════════════════════════════════════════════════════════
+
+📝 PRÓXIMO PASSO: Colar em config.js
+────────────────────────────────────────────────────────────────────────
+
+Arquivo: meu-projeto-web/js/config.js
+
+ANTES:
+const API_KEY = "AIzaSyBG3wqjDh5BqucfBzQmkiX2zGMKb2rRDLQ";
+
+DEPOIS:
+const API_KEY = "AIzaSyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+                 └─ Cole aqui a chave que você copiou
+
+
+════════════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE:
+────────────────────────────────────────────────────────────────────────
+
+✓ Projeto: "projeto-definitivo-496720"
+✓ Tipo de Credencial: API Key (não OAuth, não Service Account)
+✓ API Habilitada: Google Sheets API
+✓ Arquivo da chave: NÃO é "API Google Sheets.json"
+  
+  (O arquivo JSON é para desktop app, a chave é diferente)
+
+
+════════════════════════════════════════════════════════════════════════
+
+PRÓXIMO PASSO: Siga SOLUCAO_DEFINITIVA.md (passos 1-9)
+
+════════════════════════════════════════════════════════════════════════

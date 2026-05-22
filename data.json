@@ -1,0 +1,116 @@
+{
+  "sheets": [
+    {
+      "name": "Agencias-SP",
+      "data": [
+        ["NOME", "CARGO", "EMAIL", "NOME DA EMPRESA", "PERFIL DO LINKEDIN", "SEGMENTO", "SITE", "OBSERVAÇÕES"],
+        ["Beatriz Chrispim", "Analista de marketing sênior", "beatriz.chrispim@santajoana.com.br", "Grupo Santa Joana", "https://www.linkedin.com/in/beatriz-chrispim-b86342182/", "Saúde", "https://gruposantajoana.com.br/ensinoepesquisa/", ""],
+        ["Tamires Silva", "Analista de Marketing Sênior", "tamires.silva@santajoana.com.br", "Grupo Santa Joana", "https://www.linkedin.com/in/tamires-silva-606a0bb0/", "Saúde", "https://gruposantajoana.com.br/ensinoepesquisa/", ""],
+        ["Fabricio Duarte", "Coordenador de Marketing", "fabricio.duarte@santajoana.com.br", "Grupo Santa Joana", "https://www.linkedin.com/in/fabricio-duarte-a54a58139/", "Saúde", "https://gruposantajoana.com.br/ensinoepesquisa/", ""],
+        ["Michelle Barreto", "Gerente de Comunicação", "michelle.barreto@santajoana.com.br", "Grupo Santa Joana", "https://www.linkedin.com/in/michelle-barreto/", "Saúde", "https://gruposantajoana.com.br/ensinoepesquisa/", ""]
+      ]
+    },
+    {
+      "name": "Direto SP",
+      "data": [
+        ["NOME", "CARGO", "EMAIL", "NOME DA EMPRESA", "PERFIL DO LINKEDIN", "SEGMENTO", "SITE", "OBSERVAÇÕES"],
+        ["Waldyr Ferreira", "Head de Operações", "wferreira@bajajauto.co.in", "Bajaj Auto", "https://www.linkedin.com/in/waldyrferreira/?originalSubdomain=br", "Automotivo", "https://www.bajajauto.com/", "Colocar no mailing"],
+        ["Luis Eduardo Sato", "Coordenador de Comunicação", "luis.sato@echoenergia.com.br", "Echoenergia", "https://www.linkedin.com/in/luiseduardosato/", "Energia", "https://echoenergia.com.br/", "Colocar no mailing"]
+      ]
+    },
+    {
+      "name": "Agencias-DF",
+      "data": [
+        ["NOME", "CARGO", "EMAIL", "NOME DA EMPRESA", "PERFIL DO LINKEDIN", "SEGMENTO", "SITE", "OBSERVAÇÕES"],
+        ["Fernanda Cruz", "Diretora de Marketing", "marketing@avenues-sp.org", "Colégio Avenues", "https://www.linkedin.com/in/fernanda-gaspar-cruz/?originalSubdomain=br", "Educação", "https://www.graded.br/", "Colocar no mailing"],
+        ["Susan Clain", "Responsável pela Comunicação e Estratégia", "susan.clain@graded.br", "Graded", "https://www.linkedin.com/in/susan-clain-7b98252/?originalSubdomain=br", "Educação", "https://www.graded.br/", "Colocar no mailing"]
+      ]
+    },
+    {
+      "name": "Direto-DF",
+      "data": [
+        ["NOME", "CARGO", "EMAIL", "NOME DA EMPRESA", "PERFIL DO LINKEDIN", "SEGMENTO", "SITE", "OBSERVAÇÕES"],
+        ["Lucilene André", "Gerente de Marketing", "lucilene.andre@helbor.com.br", "Helbor", "https://www.linkedin.com/in/leneandre/", "Construção", "https://www.helbor.com.br/", "Colocar no mailing"]
+      ]
+    },
+    {
+      "name": "Agencias-MG",
+      "data": [
+        ["NOME", "CARGO", "EMAIL", "NOME DA EMPRESA", "PERFIL DO LINKEDIN", "SEGMENTO", "SITE", "OBSERVAÇÕES"],
+        ["Janaína Sousa", "Analista de Marketing", "janaina.sousa@helbor.com.br", "Helbor", "https://www.linkedin.com/in/jana%C3%ADna-sousa-098171144/", "Construção", "https://www.helbor.com.br/", "Colocar no mailing"],
+        ["Virginea Tzung", "Coordenadora de marketing", "virginea.tzung@helbor.com.br", "Helbor", "https://www.linkedin.com/in/virginea-tzung-a3a5837a/", "Construção", "https://www.helbor.com.br/", "Colocar no mailing"]
+      ]
+    },
+    {
+      "name": "Direto-MG",
+      "data": [
+        ["NOME", "CARGO", "EMAIL", "NOME DA EMPRESA", "PERFIL DO LINKEDIN", "SEGMENTO", "SITE", "OBSERVAÇÕES"],
+        ["Fernanda Fernandes", "Analista de Comunicação", "fernanda.fernandes@helbor.com.br", "Helbor", "https://www.linkedin.com/in/fernandafernandes88/", "Construção", "https://www.helbor.com.br/", "Colocar no mailing"],
+        ["Milena Torres", "Coordenadora de Marketing", "milena.faustino@helbor.com.br", "Helbor", "https://www.linkedin.com/in/milena-torres-faustino/", "Construção", "https://www.helbor.com.br/", "Colocar no mailing"]
+      ]
+    },
+    {
+      "name": "Agencias-ES",
+      "data": [
+        ["NOME", "CARGO", "EMAIL", "NOME DA EMPRESA", "PERFIL DO LINKEDIN", "SEGMENTO", "SITE", "OBSERVAÇÕES"],
+        ["Luciana Barros", "Gerente de Marketing", "luciana.barros@helbor.com.br", "Helbor", "https://www.linkedin.com/in/luciana-barros-vieira/", "Construção", "https://www.helbor.com.br/", "Colocar no mailing"],
+        ["Paola Alambert", "Marketing", "paola.alambert@helbor.com.br", "Helbor", "https://www.linkedin.com/in/paolaalambert/", "Construção", "https://www.helbor.com.br/", "Colocar no mailing"]
+      ]
+    },
+    {
+      "name": "Direto-ES",
+      "data": [
+        ["NOME", "CARGO", "EMAIL", "NOME DA EMPRESA", "PERFIL DO LINKEDIN", "SEGMENTO", "SITE", "OBSERVAÇÕES"],
+        ["Thiago Piffer", "Coordenador de marketing", "thiago.piffer@helbor.com.br", "Helbor", "https://www.linkedin.com/in/thiago-piffer/", "Construção", "https://www.helbor.com.br/", "Colocar no mailing"],
+        ["Mariana Oliveira", "Analista de Trade Marketing", "mariana.oliveira@unidas.com.br", "Unidas", "https://www.linkedin.com/in/mariana-oliveira-292441140/", "Locação de carros", "https://www.unidas.com.br/", "Colocar no mailing"]
+      ]
+    },
+    {
+      "name": "Planejamento-Semanal",
+      "data": [
+        ["Semana", "Atividade", "Responsável", "Status", "Prioridade"],
+        ["Semana 1", "Revisão de Leads", "Time de Vendas", "Em Andamento", "Alta"],
+        ["Semana 1", "Preparação de Apresentações", "Marketing", "Concluído", "Média"],
+        ["Semana 2", "Follow-up de Prospects", "Time de Vendas", "Pendente", "Alta"]
+      ]
+    },
+    {
+      "name": "Prospeccao-Inteligente",
+      "data": [
+        ["Nome", "Status", "Origem", "Classificação", "Valor"],
+        ["Empresa X", "Prospect Qualificado", "LinkedIn", "A", "R$ 50.000"],
+        ["Empresa Y", "Em Negociação", "Referência", "B", "R$ 30.000"],
+        ["Empresa Z", "Novo Lead", "Website", "C", "R$ 20.000"]
+      ]
+    },
+    {
+      "name": "Processo-Metropoles",
+      "data": [
+        ["Cliente", "Necessidade", "Solução Proposta", "Formato Comercial", "Valor Estimado", "Responsável", "Status", "Próxima Ação"],
+        ["Metrópole SP", "Marketing Digital", "Campanha Integrada", "Mensal", "R$ 15.000", "Carlos Silva", "Proposta Enviada", "Aguardar Resposta"],
+        ["Metrópole RJ", "SEO e SEM", "Estratégia Integrada", "Trimestral", "R$ 25.000", "Ana Costa", "Em Discussão", "Reunião Agendada"]
+      ]
+    },
+    {
+      "name": "Funil-Comercial",
+      "data": [
+        ["Etapa", "Contagem", "Meta", "Taxa Conversão (%)"],
+        ["Prospectagem", "150", "200", "75%"],
+        ["Qualificação", "100", "120", "83%"],
+        ["Proposta", "50", "60", "83%"],
+        ["Negociação", "30", "35", "86%"],
+        ["Fechamento", "20", "25", "57%"]
+      ]
+    },
+    {
+      "name": "Metas-Mensais",
+      "data": [
+        ["Mês", "Meta (R$)", "Realizado (R$)", "Variação (%)", "Status"],
+        ["Janeiro", "100.000", "95.000", "-5%", "Abaixo"],
+        ["Fevereiro", "120.000", "125.000", "+4%", "Acima"],
+        ["Março", "130.000", "128.000", "-1%", "Próximo"],
+        ["Abril", "140.000", "0", "0%", "Em Andamento"]
+      ]
+    }
+  ]
+}

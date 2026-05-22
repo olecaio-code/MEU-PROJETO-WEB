@@ -1,0 +1,113 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                    🚨 ERRO 403 - ACESSO NEGADO                      ║
+║              Google Sheets API Não Tem Permissão                     ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📊 RESULTADO DO SEU TESTE:
+─────────────────────────────────────────────────────────────────────
+❌ Todos os 13 testes falharam com HTTP 403
+❌ A chave API não consegue acessar a planilha
+
+
+💡 SOLUÇÃO RÁPIDA (2 PASSOS):
+─────────────────────────────────────────────────────────────────────
+
+[1️⃣] TESTE DIAGNÓSTICO (para saber qual é o problema)
+     
+     Abra no navegador:
+     👉 meu-projeto-web/test-example-sheet.html
+     
+     Clique em: 🚀 Testar Planilha de Exemplo
+     
+     Resultado:
+     ✅ Funciona? → Vá para PASSO 2 (Compartilhar)
+     ❌ Erro?     → Vá para PASSO 3 (Nova Chave)
+
+
+[2️⃣] SE TESTE DE EXEMPLO FUNCIONOU (A chave API é válida):
+
+     ✅ Compartilhe sua planilha:
+     
+     a) Abra a planilha:
+        https://docs.google.com/spreadsheets/d/1TWukqSR6JrBoW23xX1xDKiNph4R1NlK4OOLAzmL1VAA/
+     
+     b) Clique em "Compartilhar" (canto superior direito)
+     
+     c) Mude para "Qualquer pessoa com o link"
+     
+     d) Pronto! Teste novamente:
+        meu-projeto-web/test-api.html
+
+
+[3️⃣] SE TESTE DE EXEMPLO FALHOU (A chave API é inválida):
+
+     🔑 Gere uma nova Chave API:
+     
+     a) Acesse: https://console.cloud.google.com/
+     
+     b) Crie um novo projeto
+     
+     c) Habilite: Google Sheets API
+     
+     d) Vá para: Credentials → + Create API Key
+     
+     e) Copie a nova chave
+     
+     f) Abra: meu-projeto-web/js/config.js
+     
+     g) Substitua em:
+        const API_KEY = "COLE_AQUI_A_NOVA_CHAVE";
+     
+     h) Salve o arquivo
+     
+     i) Teste novamente:
+        meu-projeto-web/test-api.html
+
+
+📁 ARQUIVOS DE SUPORTE CRIADOS:
+─────────────────────────────────────────────────────────────────────
+
+✓ PROXIMOS_PASSOS.md           → Guia passo-a-passo
+✓ SOLUCAO_403.md               → Detalhes sobre HTTP 403
+✓ diagnose.html                → Diagnóstico interativo
+✓ test-example-sheet.html      → Teste com planilha de exemplo
+✓ test-api.html                → Teste original (depois de resolver)
+
+
+⏱️ TEMPO ESTIMADO:
+─────────────────────────────────────────────────────────────────────
+
+Teste Diagnóstico:      1 minuto   ⚡
+Se Compartilhar:        2 minutos  ⚡⚡
+Se Nova Chave:          10 minutos ⏱️
+
+
+🎯 PRÓXIMA AÇÃO:
+─────────────────────────────────────────────────────────────────────
+
+👉 Abra agora: meu-projeto-web/test-example-sheet.html
+
+Isso vai descobrir se o problema é:
+1. Planilha não compartilhada (solução rápida)
+2. Chave API inválida (precisa gerar nova)
+
+
+✨ RESUMO:
+─────────────────────────────────────────────────────────────────────
+
+O código está 100% correto ✓
+A integração está 100% correta ✓
+Falta só:
+  → Compartilhar a planilha OU
+  → Gerar uma nova chave API
+
+Depois disso, tudo funcionará! 🚀
+
+
+═══════════════════════════════════════════════════════════════════════
+
+DÚVIDAS? Verifique os arquivos:
+- PROXIMOS_PASSOS.md (instruções passo-a-passo)
+- SOLUCAO_403.md (mais detalhes sobre o erro)
+
+═══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,66 @@
+🎉 NOVO SISTEMA IMPLEMENTADO!
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ AGORA O DASHBOARD:
+
+  ✓ Carrega dados DO Google Sheets
+  ✓ Mostra TODOS os dados em tempo real
+  ✓ Permite EDITAR células (clique na célula)
+  ✓ Permite ADICIONAR novas linhas
+  ✓ Permite DELETAR linhas
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 COMO USAR:
+
+ABRA:
+  ABRIR_DIRETO.html
+  ou
+  http://localhost:8000
+
+═══════════════════════════════════════════════════════════════════════
+
+✏️ EDITAR DADOS:
+
+1. Clique na célula que quer editar
+2. Digite o novo valor
+3. Pressione Enter para salvar
+
+═══════════════════════════════════════════════════════════════════════
+
+➕ ADICIONAR LINHA:
+
+1. Clique no botão "➕ Adicionar Linha"
+2. Preencha os dados
+3. Pressione Enter para salvar
+
+═══════════════════════════════════════════════════════════════════════
+
+🗑️ DELETAR LINHA:
+
+1. Clique no botão "🗑️" do final de cada linha
+2. Confirme a deleção
+
+═══════════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE:
+
+As edições são feitas LOCALMENTE
+Para salvar de volta no Google Sheets, necessita OAuth 2.0
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 DOCUMENTAÇÃO:
+
+Veja: NOVO_SISTEMA_COM_GOOGLE_SHEETS.md
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 PRÓXIMO PASSO:
+
+Abra o arquivo: ABRIR_DIRETO.html
+
+E teste as novas funcionalidades!
+
+═══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,78 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║  🎯 ONDE COLAR A CHAVE API - GUIA VISUAL                            ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📁 ARQUIVO: meu-projeto-web/js/config.js
+────────────────────────────────────────────────────────────────────
+
+ANTES (Chave Antiga):
+─────────────────────────────────────────────────────────────────────
+
+const SHEET_ID = "1TWukqSR6JrBoW23xX1xDKiNph4R1NlK4OOLAzmL1VAA";
+const API_KEY = "AIzaSyBG3wqjDh5BqucfBzQmkiX2zGMKb2rRDLQ";
+                  ↑                                      ↑
+                  └──── REMOVA ESTA CHAVE ─────────────┘
+
+
+DEPOIS (Nova Chave):
+─────────────────────────────────────────────────────────────────────
+
+const SHEET_ID = "1TWukqSR6JrBoW23xX1xDKiNph4R1NlK4OOLAzmL1VAA";
+const API_KEY = "AIzaSyNOVA_CHAVE_QUE_VOCE_GEROU_AQUI";
+                  ↑                                    ↑
+                  └─ COLE A NOVA CHAVE AQUI ─────────┘
+
+
+✅ PASSO-A-PASSO:
+────────────────────────────────────────────────────────────────────
+
+[1] Copie a chave do Google Cloud Console (ver GERAR_NOVA_CHAVE_API.md)
+
+[2] Abra o arquivo config.js (pode usar qualquer editor de texto)
+
+[3] Selecione e APAGUE:
+    AIzaSyBG3wqjDh5BqucfBzQmkiX2zGMKb2rRDLQ
+    (mantendo as aspas e o resto da linha)
+
+[4] COLE a nova chave no lugar:
+    (a chave completa que você copiou)
+
+[5] Certifique-se que ficou assim:
+    const API_KEY = "AIzaSyNOVA_CHAVE_AQUI";
+                    ^                      ^
+                    Aspas mantidas!
+
+[6] Salve: Ctrl+S (ou Cmd+S no Mac)
+
+
+⚠️ IMPORTANTE:
+────────────────────────────────────────────────────────────────────
+
+✓ Mantenha as ASPAS (" ")
+✓ Mantenha o PONTO-E-VÍRGULA (;)
+✓ Não adicione espaços
+✓ NÃO mude a primeira linha (SHEET_ID)
+✓ Salve DEPOIS de fazer a mudança
+
+
+🔍 CHECKLIST:
+────────────────────────────────────────────────────────────────────
+
+☐ Copiei a chave do Google Cloud
+☐ Abri o arquivo config.js
+☐ Removi a chave antiga
+☐ Colei a chave nova
+☐ Verifiquei se ficou correto
+☐ Salvei o arquivo (Ctrl+S)
+
+
+✨ PRÓXIMO PASSO:
+────────────────────────────────────────────────────────────────────
+
+Após salvar, abra no navegador:
+👉 meu-projeto-web/test-api.html
+
+Se tudo estiver correto, você verá ✅ em todos os testes!
+
+
+═══════════════════════════════════════════════════════════════════════

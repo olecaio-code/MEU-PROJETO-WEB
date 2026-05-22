@@ -1,0 +1,103 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║              🔓 COMPARTILHAR A PLANILHA - PASSO-A-PASSO               ║
+║                                                                        ║
+║  Use este documento se os testes ainda dão 403 DEPOIS de gerar       ║
+║  uma nova chave API (significa que a chave funciona, mas a           ║
+║  planilha não está compartilhada como pública)                        ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+
+⏱️ TEMPO: 1 minuto ⚡
+
+
+✅ 4 PASSOS SIMPLES:
+────────────────────────────────────────────────────────────────────────
+
+[1] ABRIR A PLANILHA
+
+    Clique no link:
+    https://docs.google.com/spreadsheets/d/1TWukqSR6JrBoW23xX1xDKiNph4R1NlK4OOLAzmL1VAA/
+
+
+[2] CLICAR EM "COMPARTILHAR"
+
+    Localização: Canto superior direito
+    
+    Você verá:
+    ┌──────────┬──────────┐
+    │Arquivo ▼ │Editar ▼  │ Compartilhar │ ← CLIQUE AQUI
+    └──────────┴──────────┘
+    
+    Cor: Geralmente azul ou cinza
+
+
+[3] MUDAR PERMISSÃO
+
+    Uma janela aparecerá:
+    
+    ┌─────────────────────────────┐
+    │ Compartilhar com Outros     │
+    │                             │
+    │ [Restrito ▼]  ← CLIQUE AQUI │
+    │                             │
+    │ Adicionar...                │
+    └─────────────────────────────┘
+    
+    Clique em "Restrito" (ou ícone de cadeado)
+
+
+[4] SELECIONAR PERMISSÃO PÚBLICA
+
+    Um menu aparecerá:
+    
+    ┌─────────────────────────────────┐
+    │ Restrito (apenas você)          │
+    │ Qualquer pessoa com o link  ✓   │ ← ESCOLHA ESTA
+    │ Público                         │
+    └─────────────────────────────────┘
+    
+    Clique em: "Qualquer pessoa com o link"
+    
+    Depois clique em "Compartilhar" ou "Pronto"
+
+
+═════════════════════════════════════════════════════════════════════════
+
+✅ VERIFICAR SE FUNCIONOU:
+────────────────────────────────────────────────────────────────────────
+
+[1] Abra: meu-projeto-web/test-api.html
+
+[2] Se agora mostrar ✅ em todos os testes → SUCESSO!
+
+[3] Se ainda mostrar ❌ em alguns → Aguarde 1-2 minutos e tente novamente
+    (às vezes demora um pouco para propagar)
+
+
+═════════════════════════════════════════════════════════════════════════
+
+🎉 PRONTO!
+
+Agora seu dashboard funcionará:
+👉 meu-projeto-web/index.html
+
+
+═════════════════════════════════════════════════════════════════════════
+
+ℹ️ NOTAS IMPORTANTES:
+
+✓ "Qualquer pessoa com o link" significa:
+  - Qualquer um com o link pode VISUALIZAR
+  - Apenas quem tem permissão pode EDITAR
+  - É SEGURO!
+
+✓ Se alguém tiver o link da planilha, consegue ver os dados
+
+✓ Você sempre pode mudar de volta para "Restrito" depois
+
+✓ A Google Sheets API só consegue LER dados
+  - Ela nunca consegue alterar ou deletar nada
+  - É completamente seguro!
+
+
+═════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,215 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║                   📚 ÍNDICE DE DOCUMENTAÇÃO                           ║
+║                                                                        ║
+║  Dashboard Comercial com Google Sheets Integration                     ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+
+🎯 LEIA PRIMEIRO (escolha 1):
+────────────────────────────────────────────────────────────────────────
+
+📄 COMECE_AQUI.txt (2 min)
+   ↓
+   Resumo visual do status atual e próximos passos
+
+📄 CHAVE_API_RAPIDO.txt (2 min)
+   ↓
+   Se você quer apenas gerar a chave rapidinho
+
+
+🔑 GERAR NOVA CHAVE API (escolha a que melhor se encaixa):
+────────────────────────────────────────────────────────────────────────
+
+📄 CHECKLIST_CHAVE_API.txt (5 min)
+   ↓
+   Checklist passo-a-passo com todas as etapas
+   ✓ Gerar no Google Cloud
+   ✓ Atualizar no código
+   ✓ Testar
+   ✓ Usar o dashboard
+
+📄 GERAR_NOVA_CHAVE_API.md (10 min)
+   ↓
+   Guia MUITO DETALHADO com:
+   ✓ Screenshots em texto
+   ✓ Explicações completas
+   ✓ Solução de problemas
+   ✓ Dicas de segurança
+
+📄 ONDE_COLAR_CHAVE.txt (1 min)
+   ↓
+   Referência visual mostrando EXATAMENTE onde colar a chave
+   ✓ Antes/Depois
+   ✓ Localização do arquivo
+   ✓ Como salvar
+
+
+🔓 COMPARTILHAR A PLANILHA (se testes ainda darem 403):
+────────────────────────────────────────────────────────────────────────
+
+📄 COMPARTILHAR_PLANILHA.txt (1 min)
+   ↓
+   Como tornar a planilha pública para a API acessar
+   ✓ 4 passos simples
+   ✓ Screenshots em texto
+   ✓ Verificação se funcionou
+
+
+🧪 TESTES:
+────────────────────────────────────────────────────────────────────────
+
+🌐 test-api.html
+   ↓
+   Testa todas as 13 abas da sua planilha
+   Use: Depois de gerar a chave e compartilhar
+
+🌐 test-example-sheet.html
+   ↓
+   Testa com uma planilha de exemplo pública
+   Use: Para descobrir se a chave API funciona
+
+🌐 diagnose.html
+   ↓
+   Diagnóstico interativo do problema 403
+   Use: Para entender melhor o erro
+
+
+💻 APLICAÇÃO:
+────────────────────────────────────────────────────────────────────────
+
+🌐 index.html
+   ↓
+   Dashboard principal
+   Use: Quando tudo estiver configurado
+   ✓ Navega entre abas
+   ✓ Carrega dados em tempo real
+   ✓ Botão para atualizar dados
+
+
+📖 DOCUMENTAÇÃO COMPLETA:
+────────────────────────────────────────────────────────────────────────
+
+📄 README.md
+   ↓
+   Documentação geral do projeto
+   ✓ Arquivos modificados
+   ✓ Como testar
+   ✓ Problemas conhecidos
+
+📄 INTEGRAÇÃO_GOOGLE_SHEETS.md
+   ↓
+   Guia sobre a integração Google Sheets
+   ✓ Status da integração
+   ✓ Nomes das abas configuradas
+   ✓ Validação
+
+📄 SOLUCAO_403.md
+   ↓
+   Detalhes sobre o erro HTTP 403
+   ✓ O que significa
+   ✓ Soluções
+   ✓ Ordem recomendada
+
+📄 PROXIMOS_PASSOS.md
+   ↓
+   Matriz de decisão para próximos passos
+   ✓ Qual teste fazer
+   ✓ O que fazer com resultado
+   ✓ Tempo estimado
+
+📄 TESTE_RÁPIDO.txt
+   ↓
+   Guia rápido para testar
+   ✓ 4 passos
+   ✓ Checklist simples
+
+
+═════════════════════════════════════════════════════════════════════════
+
+
+🚀 FLUXO RECOMENDADO:
+────────────────────────────────────────────────────────────────────────
+
+VOCÊ ESTÁ AQUI: Recebeu erro 403 nos testes
+                    ↓
+[1] Leia: COMECE_AQUI.txt (2 min)
+                    ↓
+[2] Escolha seu caminho:
+    
+    A) "Quero gerar chave rápido"
+       → Leia: CHAVE_API_RAPIDO.txt
+       → Depois: CHECKLIST_CHAVE_API.txt
+    
+    B) "Preciso de instruções detalhadas"
+       → Leia: GERAR_NOVA_CHAVE_API.md
+       → Depois: ONDE_COLAR_CHAVE.txt
+    
+    C) "Quero apenas referência visual"
+       → Leia: ONDE_COLAR_CHAVE.txt
+                    ↓
+[3] Depois de gerar a chave:
+    → Abra: test-api.html no navegador
+                    ↓
+[4] Se testes darem ✅:
+    → Parabéns! Use: index.html
+    
+[5] Se testes darem ❌:
+    → Leia: COMPARTILHAR_PLANILHA.txt
+    → Depois: test-api.html novamente
+
+
+═════════════════════════════════════════════════════════════════════════
+
+
+📊 ESTRUTURA DE ARQUIVOS:
+────────────────────────────────────────────────────────────────────────
+
+meu-projeto-web/
+│
+├── 📄 Documentos de Apoio (você está lendo):
+│   ├── COMECE_AQUI.txt
+│   ├── CHAVE_API_RAPIDO.txt
+│   ├── CHECKLIST_CHAVE_API.txt
+│   ├── GERAR_NOVA_CHAVE_API.md
+│   ├── ONDE_COLAR_CHAVE.txt
+│   ├── COMPARTILHAR_PLANILHA.txt
+│   ├── SOLUCAO_403.md
+│   ├── PROXIMOS_PASSOS.md
+│   ├── README.md
+│   ├── INTEGRAÇÃO_GOOGLE_SHEETS.md
+│   └── TESTE_RÁPIDO.txt
+│
+├── 🌐 Aplicação:
+│   ├── index.html (Dashboard principal)
+│
+├── 🧪 Testes:
+│   ├── test-api.html
+│   ├── test-example-sheet.html
+│   └── diagnose.html
+│
+└── 📁 Código:
+    └── js/
+        ├── config.js ← Edite aqui para adicionar a chave
+        ├── dashboard-base.js
+        ├── tabs.js
+        └── [outros].js
+
+
+═════════════════════════════════════════════════════════════════════════
+
+
+❓ NÃO SABE POR ONDE COMEÇAR?
+────────────────────────────────────────────────────────────────────────
+
+[1] Abra: COMECE_AQUI.txt
+
+[2] Siga as instruções
+
+[3] Volte aqui se tiver dúvida sobre qual arquivo ler
+
+
+═════════════════════════════════════════════════════════════════════════
+
+✨ BOM SORTE! 🚀
+
+═════════════════════════════════════════════════════════════════════════

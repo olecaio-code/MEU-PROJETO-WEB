@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Google Sheets Integration</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #f5f5f5; 
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #007bff; margin-bottom: 20px; }
+        .test-item { 
+            margin: 15px 0; 
+            padding: 15px;
+            border-left: 4px solid #ddd;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        .test-item.loading {
+            border-left-color: #ffc107;
+            background: #fffbf0;
+        }
+        .test-item.success {
+            border-left-color: #28a745;
+            background: #f0f8f4;
+        }
+        .test-item.error {
+            border-left-color: #dc3545;
+            background: #f8f4f4;
+        }
+        .status-icon {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .loading .status-icon { color: #ffc107; }
+        .success .status-icon { color: #28a745; }
+        .error .status-icon { color: #dc3545; }
+        .detail {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            font-family: monospace;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Teste de Integração - Google Sheets</h1>
+        
+        <div id="results"></div>
+        
+        <button onclick="runTests()">▶ Executar Testes</button>
+    </div>
+
+    <script>
+        const SHEET_ID = "1TWukqSR6JrBoW23xX1xDKiNph4R1NlK4OOLAzmL1VAA";
+        const API_KEY = "AIzaSyBG3wqjDh5BqucfBzQmkiX2zGMKb2rRDLQ";
+        
+        const sheetsToTest = [
+            { name: "Agencias-SP", range: "'Agencias-SP'!A1:H" },
+            { name: "Direto SP", range: "'Direto SP'!A1:H" },
+            { name: "AgenciasDF", range: "'AgenciasDF'!A1:H" },
+            { name: "Direto-DF", range: "'Direto-DF'!A1:H" },
+            { name: "Agencias-MG", range: "'Agencias-MG'!A1:H" },
+            { name: "Direto-MG", range: "'Direto-MG'!A1:H" },
+            { name: "Agencias-ES", range: "'Agencias-ES'!A1:H" },
+            { name: "Direto-ES", range: "'Direto-ES'!A1:H" },
+            { name: "Planejamento-Semanal", range: "'Planejamento-Semanal'!A1:E" },
+            { name: "Prospeccao-Inteligente", range: "'Prospeccao-Inteligente'!A1:E" },
+            { name: "Processo-Metropoles", range: "'Processo-Metropoles'!A1:H" },
+            { name: "Funil-Comercial", range: "'Funil-Comercial'!A1:D" },
+            { name: "Metas-Mensais", range: "'Metas-Mensais'!A1:E" }
+        ];
+
+        function addResult(text, type, detail = "") {
+            const resultsDiv = document.getElementById("results");
+            const item = document.createElement("div");
+            item.className = `test-item ${type}`;
+            
+            let icon = "⏳";
+            if (type === "success") icon = "✅";
+            else if (type === "error") icon = "❌";
+            
+            item.innerHTML = `
+                <span class="status-icon">${icon}</span>
+                <strong>${text}</strong>
+                ${detail ? `<div class="detail">${detail}</div>` : ""}
+            `;
+            resultsDiv.appendChild(item);
+            return item;
+        }
+
+        async function testSheet(sheetName, range) {
+            const item = addResult(`Testando: ${sheetName}...`, "loading");
+            
+            try {
+                const encodedRange = encodeURIComponent(range);
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodedRange}?alt=json&key=${API_KEY}`;
+                
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    item.className = "test-item error";
+                    item.innerHTML = `
+                        <span class="status-icon">❌</span>
+                        <strong>Erro em ${sheetName}</strong>
+                        <div class="detail">HTTP ${response.status}: ${response.statusText}</div>
+                    `;
+                    return;
+                }
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    item.className = "test-item error";
+                    item.innerHTML = `
+                        <span class="status-icon">❌</span>
+                        <strong>Erro em ${sheetName}</strong>
+                        <div class="detail">${data.error.message}</div>
+                    `;
+                    return;
+                }
+
+                const rows = data.values || [];
+                const rowCount = Math.max(0, rows.length - 1);
+                
+                item.className = "test-item success";
+                item.innerHTML = `
+                    <span class="status-icon">✅</span>
+                    <strong>${sheetName}</strong>
+                    <div class="detail">${rows.length} linhas (${rowCount} com dados)</div>
+                `;
+            } catch (e) {
+                item.className = "test-item error";
+                item.innerHTML = `
+                    <span class="status-icon">❌</span>
+                    <strong>Exceção em ${sheetName}</strong>
+                    <div class="detail">${e.message}</div>
+                `;
+            }
+        }
+
+        async function runTests() {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "";
+            
+            addResult("🚀 Iniciando testes...", "loading");
+            addResult(`Planilha ID: ${SHEET_ID}`, "loading");
+            addResult(`Total de abas para testar: ${sheetsToTest.length}`, "loading");
+            
+            for (const sheet of sheetsToTest) {
+                await testSheet(sheet.name, sheet.range);
+                // Pequeno delay para não sobrecarregar a API
+                await new Promise(resolve => setTimeout(resolve, 200));
+            }
+            
+            addResult("✨ Testes concluídos!", "success");
+        }
+
+        // Executar testes automaticamente ao carregar
+        window.addEventListener("load", () => {
+            runTests();
+        });
+    </script>
+</body>
+</html>

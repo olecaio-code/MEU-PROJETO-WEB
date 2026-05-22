@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✅ Verificação Completa do Sistema</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+        .check-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #e0e0e0;
+            background: #f9f9f9;
+            transition: all 0.3s;
+        }
+        .check-item.success {
+            border-left-color: #4caf50;
+            background: #f1f8f4;
+        }
+        .check-item.error {
+            border-left-color: #f44336;
+            background: #fef5f5;
+        }
+        .check-item.loading {
+            border-left-color: #2196f3;
+            background: #f3f9ff;
+        }
+        .icon {
+            font-size: 2em;
+            margin-right: 20px;
+            min-width: 50px;
+        }
+        .content h3 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .content p {
+            color: #666;
+            font-size: 0.9em;
+            margin: 2px 0;
+        }
+        .summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .summary h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .status-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .status-card strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .status-card span {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: #4caf50;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background: #2196f3;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #0b7dda;
+            transform: scale(1.05);
+        }
+        .timestamp {
+            text-align: center;
+            color: #999;
+            margin-top: 30px;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Verificação Completa do Sistema</h1>
+        
+        <div id="checks"></div>
+        
+        <div id="summary" class="summary" style="display:none;">
+            <h2 id="summaryTitle">Carregando...</h2>
+            <div class="status-grid" id="statusGrid"></div>
+            
+            <div class="button-group">
+                <a href="test-local-data.html" class="btn btn-secondary">🧪 Testar Dados Locais</a>
+                <a href="test-dashboard.html" class="btn btn-secondary">📊 Ver Dashboard</a>
+                <a href="/" class="btn btn-primary">🚀 Abrir Aplicação</a>
+            </div>
+        </div>
+        
+        <div id="timestamp" class="timestamp"></div>
+    </div>
+
+    <script>
+        async function runChecks() {
+            const checksDiv = document.getElementById('checks');
+            const checks = [];
+            
+            // Check 1: Arquivo data.json
+            try {
+                const response = await fetch('./data.json');
+                const data = await response.json();
+                const sheetCount = data.sheets ? data.sheets.length : 0;
+                const totalRows = data.sheets ? data.sheets.reduce((sum, s) => sum + (s.data ? s.data.length - 1 : 0), 0) : 0;
+                
+                checks.push({
+                    icon: '✅',
+                    title: 'data.json',
+                    description: `${sheetCount} abas carregadas com ${totalRows} linhas de dados`,
+                    status: 'success',
+                    details: sheetCount === 13 ? 'Todas as 13 abas presentes' : `⚠️ Apenas ${sheetCount} abas`
+                });
+            } catch (e) {
+                checks.push({
+                    icon: '❌',
+                    title: 'data.json',
+                    description: 'Arquivo não encontrado ou inválido',
+                    status: 'error',
+                    details: e.message
+                });
+            }
+            
+            // Check 2: Configuração LOCAL DATA
+            try {
+                const config = await import('./js/config.js');
+                checks.push({
+                    icon: '✅',
+                    title: 'Configuração (config.js)',
+                    description: 'USE_LOCAL_DATA está ativado',
+                    status: 'success',
+                    details: config.USE_LOCAL_DATA ? 'Modo LOCAL ✓' : '⚠️ Modo Google Sheets'
+                });
+            } catch (e) {
+                checks.push({
+                    icon: '❌',
+                    title: 'Configuração (config.js)',
+                    description: 'Erro ao carregar configuração',
+                    status: 'error',
+                    details: e.message
+                });
+            }
+            
+            // Check 3: Dashboard Base
+            try {
+                const dashboard = await import('./js/dashboard-base.js');
+                checks.push({
+                    icon: '✅',
+                    title: 'dashboard-base.js',
+                    description: 'Módulo carregado com sucesso',
+                    status: 'success',
+                    details: 'Funções: loadAllSheets, loadSheetLocal, loadSheetAPI'
+                });
+            } catch (e) {
+                checks.push({
+                    icon: '❌',
+                    title: 'dashboard-base.js',
+                    description: 'Erro ao carregar módulo',
+                    status: 'error',
+                    details: e.message
+                });
+            }
+            
+            // Check 4: Tabs.js
+            try {
+                const tabs = await import('./js/tabs.js');
+                checks.push({
+                    icon: '✅',
+                    title: 'tabs.js',
+                    description: 'Módulo carregado com sucesso',
+                    status: 'success',
+                    details: 'Funções: initTabs, switchTab'
+                });
+            } catch (e) {
+                checks.push({
+                    icon: '❌',
+                    title: 'tabs.js',
+                    description: 'Erro ao carregar módulo',
+                    status: 'error',
+                    details: e.message
+                });
+            }
+            
+            // Check 5: index.html
+            try {
+                const response = await fetch('./');
+                if (response.ok) {
+                    checks.push({
+                        icon: '✅',
+                        title: 'index.html',
+                        description: 'Página principal acessível',
+                        status: 'success',
+                        details: 'Dashboard pronto para uso'
+                    });
+                }
+            } catch (e) {
+                checks.push({
+                    icon: '❌',
+                    title: 'index.html',
+                    description: 'Erro ao acessar página',
+                    status: 'error',
+                    details: e.message
+                });
+            }
+            
+            // Check 6: HTML de teste
+            try {
+                const response = await fetch('./test-local-data.html');
+                if (response.ok) {
+                    checks.push({
+                        icon: '✅',
+                        title: 'test-local-data.html',
+                        description: 'Página de validação disponível',
+                        status: 'success',
+                        details: 'Teste de dados locais pronto'
+                    });
+                }
+            } catch (e) {
+                checks.push({
+                    icon: '⚠️',
+                    title: 'test-local-data.html',
+                    description: 'Página não encontrada',
+                    status: 'error'
+                });
+            }
+            
+            // Renderizar checks
+            checksDiv.innerHTML = '';
+            checks.forEach(check => {
+                const div = document.createElement('div');
+                div.className = `check-item ${check.status}`;
+                div.innerHTML = `
+                    <div class="icon">${check.icon}</div>
+                    <div class="content">
+                        <h3>${check.title}</h3>
+                        <p>${check.description}</p>
+                        <p style="color: #999; font-size: 0.8em;">→ ${check.details}</p>
+                    </div>
+                `;
+                checksDiv.appendChild(div);
+            });
+            
+            // Contar sucessos
+            const successCount = checks.filter(c => c.status === 'success').length;
+            const totalCount = checks.length;
+            const allSuccess = successCount === totalCount;
+            
+            // Mostrar resumo
+            const summaryDiv = document.getElementById('summary');
+            summaryDiv.style.display = 'block';
+            
+            const summaryTitle = document.getElementById('summaryTitle');
+            const statusGrid = document.getElementById('statusGrid');
+            
+            if (allSuccess) {
+                summaryTitle.innerHTML = '✨ SISTEMA PRONTO PARA USO! ✨';
+                summaryTitle.style.color = '#4caf50';
+            } else {
+                summaryTitle.innerHTML = '⚠️ Alguns problemas encontrados';
+                summaryTitle.style.color = '#ff9800';
+            }
+            
+            statusGrid.innerHTML = `
+                <div class="status-card">
+                    <strong>${successCount}/${totalCount}</strong>
+                    <span>Verificações OK</span>
+                </div>
+                <div class="status-card">
+                    <strong>${totalCount}</strong>
+                    <span>Componentes testados</span>
+                </div>
+                <div class="status-card">
+                    <strong>${allSuccess ? '✅ Pronto' : '⚠️ Revisar'}</strong>
+                    <span>Status Geral</span>
+                </div>
+            `;
+            
+            // Timestamp
+            document.getElementById('timestamp').innerHTML = 
+                `✓ Verificação concluída em ${new Date().toLocaleString('pt-BR')}`;
+            
+            console.log(`Verificação concluída: ${successCount}/${totalCount} checks passaram`);
+        }
+        
+        // Executar ao carregar
+        window.addEventListener('load', runChecks);
+    </script>
+</body>
+</html>

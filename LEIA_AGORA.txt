@@ -1,0 +1,65 @@
+⚠️ FALTAVA INICIAR O SERVIDOR HTTP!
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ PROBLEMA RESOLVIDO!
+
+Você recebeu "ERR_CONNECTION_REFUSED" porque o servidor não estava rodando.
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 COMO INICIAR (SUPER SIMPLES):
+
+OPÇÃO 1 (MAIS FÁCIL):
+  1. Procure pelo arquivo: INICIAR_SERVIDOR.bat
+  2. Duplo-clique nele
+  3. Uma janela preta vai abrir
+  4. Aguarde a mensagem: "Servidor iniciado em http://localhost:8000"
+  5. Pronto! ✅
+
+OPÇÃO 2:
+  1. Abra Prompt de Comando (cmd.exe)
+  2. Digite:
+     cd "c:\Users\Caio Bruno Corrêa\OneDrive\Área de Trabalho\meu-projeto-web"
+     python -m http.server 8000
+  3. Pronto! ✅
+
+═══════════════════════════════════════════════════════════════════════
+
+🌐 DEPOIS DE INICIAR:
+
+Abra no navegador:
+  → http://localhost:8000
+
+═══════════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE:
+
+Não feche a janela do servidor enquanto estiver usando o dashboard!
+
+Para parar:
+  Pressione Ctrl+C na janela do servidor
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ PRONTO!
+
+Agora você terá:
+  ✓ Dashboard funcionando
+  ✓ 13 abas carregadas
+  ✓ Dados exibindo
+  ✓ Tudo operacional
+
+═══════════════════════════════════════════════════════════════════════
+
+PASSO A PASSO:
+
+1️⃣ Duplo-clique em: INICIAR_SERVIDOR.bat
+
+2️⃣ Aguarde: "Servidor iniciado em http://localhost:8000"
+
+3️⃣ Abra navegador e digite: http://localhost:8000
+
+4️⃣ Veja seu dashboard! 🎉
+
+═══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,50 @@
+╔════════════════════════════════════════════════════════════════╗
+║         🔑 GERAR NOVA CHAVE API - RESUMO RÁPIDO              ║
+╚════════════════════════════════════════════════════════════════╝
+
+⏱️ TEMPO: ~10 minutos
+
+
+📋 7 PASSOS RÁPIDOS:
+────────────────────────────────────────────────────────────────
+
+[1] Abra: https://console.cloud.google.com/
+
+[2] Clique em "Novo Projeto" (canto superior)
+
+[3] Nome: "Dashboard Comercial" → Criar
+
+[4] Vá para: APIs & Services → Library
+    Procure: "Google Sheets API"
+    Clique: ENABLE (azul)
+
+[5] Vá para: APIs & Services → Credentials
+    Clique: "+ CREATE CREDENTIALS"
+    Escolha: "API Key"
+
+[6] Copie a chave que apareceu
+
+[7] Abra: meu-projeto-web/js/config.js
+    Substitua em:
+    const API_KEY = "COLE_AQUI_A_NOVA_CHAVE";
+    Salve: Ctrl+S
+
+
+✅ DEPOIS:
+────────────────────────────────────────────────────────────────
+
+1. Abra: meu-projeto-web/test-api.html
+2. Deve mostrar ✅ em todos os testes
+3. Abra: meu-projeto-web/index.html
+4. Dados devem carregar! 🎉
+
+
+📚 DETALHES COMPLETOS:
+────────────────────────────────────────────────────────────────
+
+Leia: GERAR_NOVA_CHAVE_API.md (nesta pasta)
+
+Tem screenshots em texto e todas as soluções de problemas.
+
+
+═══════════════════════════════════════════════════════════════════

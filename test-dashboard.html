@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Teste Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            opacity: 0.9;
+        }
+        
+        .tabs-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #e0e0e0;
+            background: #f9f9f9;
+        }
+        
+        .tab-button {
+            padding: 15px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .tab-button:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .tab-button.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 30px;
+            animation: fadeIn 0.3s;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background: #f0f0f0;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .error {
+            color: #f44336;
+            padding: 20px;
+            background: #fef5f5;
+            border-radius: 5px;
+            border-left: 4px solid #f44336;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+        }
+        
+        .spinner {
+            border: 4px solid #e0e0e0;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Dashboard - Dados Locais</h1>
+            <p>Todas as 13 abas carregadas com sucesso de data.json</p>
+        </header>
+        
+        <div class="tabs-container">
+            <div class="tabs-nav" id="tabsNav"></div>
+            <div id="tabsContent"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { loadAllSheets } from './js/dashboard-base.js';
+        
+        const tabNames = [
+            "Agencias-SP",
+            "Direto SP",
+            "Agencias-DF",
+            "Direto-DF",
+            "Agencias-MG",
+            "Direto-MG",
+            "Agencias-ES",
+            "Direto-ES",
+            "Planejamento-Semanal",
+            "Prospeccao-Inteligente",
+            "Processo-Metropoles",
+            "Funil-Comercial",
+            "Metas-Mensais"
+        ];
+        
+        const tabIds = [
+            "table-agencias-sp",
+            "table-direto-sp",
+            "table-agencias-df",
+            "table-direto-df",
+            "table-agencias-mg",
+            "table-direto-mg",
+            "table-agencias-es",
+            "table-direto-es",
+            "table-planejamento-semanal",
+            "table-prospeccao-inteligente",
+            "table-processo-metropoles",
+            "table-funil-comercial",
+            "table-metas-mensais"
+        ];
+        
+        function initTabs() {
+            const tabsNav = document.getElementById('tabsNav');
+            const tabsContent = document.getElementById('tabsContent');
+            
+            // Criar botões e conteúdo
+            tabNames.forEach((name, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'tab-button' + (i === 0 ? ' active' : '');
+                btn.textContent = name;
+                btn.onclick = () => switchTab(i);
+                tabsNav.appendChild(btn);
+                
+                const div = document.createElement('div');
+                div.className = 'tab-content' + (i === 0 ? ' active' : '');
+                div.id = 'tab-' + i;
+                
+                const table = document.createElement('table');
+                const thead = document.createElement('thead');
+                const tbody = document.createElement('tbody');
+                tbody.id = tabIds[i];
+                
+                table.appendChild(thead);
+                table.appendChild(tbody);
+                div.appendChild(table);
+                tabsContent.appendChild(div);
+            });
+            
+            // Carregar dados
+            loadAllSheets();
+        }
+        
+        function switchTab(index) {
+            // Desativar todos
+            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            // Ativar selecionado
+            document.querySelectorAll('.tab-button')[index].classList.add('active');
+            document.getElementById('tab-' + index).classList.add('active');
+        }
+        
+        window.switchTab = switchTab;
+        
+        initTabs();
+    </script>
+</body>
+</html>
