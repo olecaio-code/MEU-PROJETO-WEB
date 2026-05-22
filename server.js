@@ -18,7 +18,7 @@ const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 const credentials = JSON.parse(fs.readFileSync(CREDENTIALS_PATH, 'utf8'));
 const oauthConfig = credentials.web || credentials.installed || credentials;
 const redirectUris = oauthConfig.redirect_uris || oauthConfig.redirectUris || [];
-const redirectUri = redirectUris.find(uri => uri.includes(':3000')) || redirectUris[0] || 'http://localhost:3000/oauth2callback';
+const redirectUri = redirectUris.find(uri => uri.includes(':3000')) || redirectUris[0] || 'https://meu-projeto-web-w9b4.onrender.com';
 const oauth2Client = new google.auth.OAuth2(
   oauthConfig.client_id,
   oauthConfig.client_secret,
@@ -316,8 +316,7 @@ const server = http.createServer(async (req, res) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log('Servidor iniciado em http://localhost:3000');
-  console.log('Acesse sua aplicação em: http://localhost:3000');
-  console.log('Se necessário, abra http://localhost:3000/auth para autorizar o acesso ao Google Sheets.');
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
