@@ -5,7 +5,7 @@ const API_KEY = "AIzaSyAHN8gFXs8CDoRfGb_AFFqQEvZvwQr-zvw";
 const USE_LOCAL_DATA = false;
 
 // Endereço base da API do servidor local (quando usar OAuth + edição)
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://meu-projeto-web-w9b4.onrender.com";
 
 // Intervalo de atualização automática em milissegundos
 const REFRESH_INTERVAL_MS = 60000;
